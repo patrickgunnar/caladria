@@ -6,7 +6,26 @@ html,
 body,
 :root {
     height: 100%;
+    background: #2C2C2C !important;
 }
+
+/*#707070 #808080
+#FFA500
+#999999 #A9A9A9
+#FF7F00
+#666666 #777777
+#FF9900
+#555555 #666666
+#FF6600
+
+#333333
+#FFA500
+#444444
+#FF7F00
+#2C2C2C
+#FF9900
+#555555
+#FF6600*/
 
 @layer base {
     :root {
