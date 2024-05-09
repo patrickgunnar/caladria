@@ -1,10 +1,13 @@
+import { Logo } from "./_components/Logo";
+
 interface AuthLayoutProps {
     children: React.ReactNode;
 }
 
 export default function AuthLayout({ children }: AuthLayoutProps) {
     return (
-        <div className="flex items-center justify-center h-full">
+        <div className="flex flex-col items-center justify-center space-y-6 min-h-full">
+            <Logo />
             {children}
         </div>
     );
