@@ -1,4 +1,4 @@
-import { Logo } from "./_components/Logo";
+import { Logo } from "../../components/logo/Logo";
 
 interface AuthLayoutProps {
     children: React.ReactNode;
