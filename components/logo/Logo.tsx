@@ -9,10 +9,8 @@ const fontFamily = Poppins({
 
 export function Logo() {
     return (
-        <div className="flex flex-row items-center bg-[#444444] rounded-2xl shadow-sm shadow-[#00000080] m-2 p-1">
-            <div className="">
-                <GiElfEar size={60} className="text-[#FF7F00] drop-shadow-sm" />
-            </div>
+        <div className="flex flex-row items-center m-2 p-1">
+            <GiElfEar size={60} className="text-[#FF7F00] drop-shadow-sm" />
             <div
                 className={cn(
                     "flex flex-col items-start text-black pr-5",
