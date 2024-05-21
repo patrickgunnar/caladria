@@ -1,5 +1,5 @@
 import { getRecommended } from "@/lib/recommendedService";
-import Recommended, { RecommendedSkeleton } from "./Recommended";
+import Recommended from "./Recommended";
 import Toggle from "./Toggle";
 import Wrapper from "./wrapper";
 
@@ -15,11 +15,3 @@ export default async function Sidebar() {
         </Wrapper>
     );
 }
-
-export const SidebarSkeleton = () => {
-    return (
-        <aside className="fixed flex flex-col bg-[#333333] border-r border-[#393939] top-16 left-0 h-full w-[70px] z-50 lg:w-60">
-            <RecommendedSkeleton />
-        </aside>
-    );
-};
