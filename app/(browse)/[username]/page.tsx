@@ -1,6 +1,7 @@
 import { isFollowingUser } from "@/lib/followService";
 import { getUserByUsername } from "@/lib/userService";
 import { notFound } from "next/navigation";
+import Actions from "./_components/actions";
 
 interface PageProps {
     params: {
@@ -25,6 +26,7 @@ export default async function Page({
             <p>Username: {username}</p>
             <p>User ID: {id}</p>
             <p>Following: {JSON.stringify(isFollowing)}</p>
+            <Actions isFollowing={isFollowing} userId={id} />
         </div>
     );
 }
