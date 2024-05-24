@@ -1,9 +1,37 @@
 import { db } from "./db";
 import { getSelf } from "./authService";
 
+export const getFollowedUsers = async () => {
+    try {
+        const self = await getSelf();
+
+        if (!self) {
+            throw new Error("You must be logged in to follow");
+        }
+
+        const followedUser = await db.follow.findMany({
+            where: {
+                followerId: self.id,
+            },
+            include: {
+                following: true,
+            },
+        });
+
+        return followedUser;
+    } catch (_) {
+        return [];
+    }
+};
+
 export const isFollowingUser = async (id: string) => {
     try {
         const self = await getSelf();
+
+        if (!self) {
+            throw new Error("You must be logged in to follow");
+        }
+
         const otherUser = await db.user.findUnique({
             where: { id },
         });
