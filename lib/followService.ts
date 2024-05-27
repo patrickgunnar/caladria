@@ -40,14 +40,16 @@ export const isFollowingUser = async (id: string) => {
             throw new Error("User not found");
         }
 
-        if (otherUser.id === self?.id) {
+        if (otherUser.id === self.id) {
             return true;
         }
 
-        const existingFollow = await db.follow.findFirst({
+        const existingFollow = await db.follow.findUnique({
             where: {
-                followerId: self?.id,
-                followingId: otherUser.id,
+                followerId_followingId: {
+                    followerId: self.id,
+                    followingId: otherUser.id,
+                },
             },
         });
 
