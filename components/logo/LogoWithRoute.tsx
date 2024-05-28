@@ -8,19 +8,30 @@ const fontFamily = Poppins({
     weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-export function LogoWithRoute() {
+interface LogoWithRouteProps {
+    label?: string;
+}
+
+export function LogoWithRoute({ label }: LogoWithRouteProps) {
     return (
         <Link href="/">
-            <div className="flex flex-row items-center m-2 p-1 transition hover:opacity-75">
+            <div
+                className={cn(
+                    "flex flex-row items-center m-2 p-1 transition hover:opacity-75",
+                    fontFamily.className
+                )}
+            >
                 <GiElfEar size={50} className="text-[#FF7F00] drop-shadow-sm" />
-                <p
-                    className={cn(
-                        "hidden lg:block font-semibold text-lg text-black pr-5",
-                        fontFamily.className
+                <div className="hidden lg:flex gap-y-0 flex-col">
+                    <p className="block font-semibold text-lg text-black pr-5">
+                        Caladria
+                    </p>
+                    {label && (
+                        <p className="text-xs text-muted-foreground">
+                            {label}
+                        </p>
                     )}
-                >
-                    Caladria
-                </p>
+                </div>
             </div>
         </Link>
     );
