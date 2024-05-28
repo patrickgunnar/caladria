@@ -1,5 +1,10 @@
 import { db } from "./db";
 import { getSelf } from "./authService";
+import {
+    isFollowingUser,
+    unfollowUser,
+    unfollowUserByOtherUser,
+} from "./followService";
 
 export async function isBlockedByUser(id: string) {
     try {
@@ -31,7 +36,9 @@ export async function isBlockedByUser(id: string) {
         });
 
         return !!existingBlock;
-    } catch (_) {
+    } catch (err: any) {
+        console.log(err);
+
         return false;
     }
 }
@@ -79,8 +86,17 @@ export async function blockUser(id: string) {
             },
         });
 
+        const isFollowing = await isFollowingUser(otherUser.id);
+
+        if (isFollowing) {
+            await unfollowUser(otherUser.id);
+            await unfollowUserByOtherUser(otherUser.id);
+        }
+
         return block;
-    } catch (_) {
+    } catch (err: any) {
+        console.log(err);
+
         return null;
     }
 }
@@ -128,7 +144,9 @@ export async function unblockUser(id: string) {
         });
 
         return unblock;
-    } catch (_) {
+    } catch (err: any) {
+        console.log(err);
+
         return null;
     }
 }
