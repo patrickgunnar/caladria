@@ -12,6 +12,13 @@ export const getFollowedUsers = async () => {
         const followedUser = await db.follow.findMany({
             where: {
                 followerId: self.id,
+                following: {
+                    blocking: {
+                        none: {
+                            blockedId: self.id,
+                        },
+                    },
+                },
             },
             include: {
                 following: true,
@@ -126,6 +133,48 @@ export const unfollowUser = async (id: string) => {
         where: {
             followerId: self.id,
             followingId: otherUser.id,
+        },
+    });
+
+    if (!existingFollow) {
+        throw new Error("Not following");
+    }
+
+    const follow = await db.follow.delete({
+        where: {
+            id: existingFollow.id,
+        },
+        include: {
+            following: true,
+        },
+    });
+
+    return follow;
+};
+
+export const unfollowUserByOtherUser = async (id: string) => {
+    const self = await getSelf();
+
+    if (!self) {
+        throw new Error("You must be logged in to proceed");
+    }
+
+    const otherUser = await db.user.findUnique({
+        where: { id },
+    });
+
+    if (!otherUser) {
+        throw new Error("User not found");
+    }
+
+    if (otherUser.id === self.id) {
+        throw new Error("Cannot unfollow yourself");
+    }
+
+    const existingFollow = await db.follow.findFirst({
+        where: {
+            followerId: otherUser.id,
+            followingId: self.id,
         },
     });
 
