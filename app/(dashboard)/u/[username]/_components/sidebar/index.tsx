@@ -1,10 +1,10 @@
-import Toggle from "./Toggle";
-import Wrapper from "./Wrapper";
+import LocalWrapper from "./LocalWrapper";
+import LocalToggle from "./LocalToggle";
 
 export default function Sidebar() {
     return (
-        <Wrapper>
-            <Toggle />
-        </Wrapper>
+        <LocalWrapper>
+            <LocalToggle />
+        </LocalWrapper>
     );
 }

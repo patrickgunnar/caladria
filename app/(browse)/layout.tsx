@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import Container from "./_components/Container";
+import LocalContainer from "./_components/LocalContainer";
 import Navbar from "./_components/navbar";
 import Sidebar from "./_components/sidebar";
-import SidebarSkeleton from "./_components/sidebar/SidebarSkeleton";
+import LocalSidebarSkeleton from "./_components/sidebar/LocalSidebarSkeleton";
 
 export default function BrowseLayout({
     children,
@@ -13,10 +13,10 @@ export default function BrowseLayout({
         <>
             <Navbar />
             <div className="flex pt-20 h-full">
-                <Suspense fallback={<SidebarSkeleton />}>
+                <Suspense fallback={<LocalSidebarSkeleton />}>
                     <Sidebar />
                 </Suspense>
-                <Container>{children}</Container>
+                <LocalContainer>{children}</LocalContainer>
             </div>
         </>
     );

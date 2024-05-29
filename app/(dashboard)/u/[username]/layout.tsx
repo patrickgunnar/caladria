@@ -2,6 +2,9 @@ import { getSelfByUSername } from "@/lib/authService";
 import { redirect } from "next/navigation";
 import Navbar from "./_components/navbar";
 import Sidebar from "./_components/sidebar";
+import LocalContainer from "./_components/LocalContainer";
+import { Suspense } from "react";
+import LocalSidebarSkeleton from "./_components/sidebar/LocalSidebarSkeleton";
 
 interface CreatorLayoutProps {
     params: { username: string };
@@ -22,8 +25,10 @@ export default async function CreatorLayout({
         <>
             <Navbar />
             <div className="flex pt-20 h-full">
-                <Sidebar />
-                {children}
+                <Suspense fallback={<LocalSidebarSkeleton />}>
+                    <Sidebar />
+                </Suspense>
+                <LocalContainer>{children}</LocalContainer>
             </div>
         </>
     );
