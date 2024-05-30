@@ -26,7 +26,7 @@ export default function ToggleCard({ field, label, value }: ToggleCardProps) {
     };
 
     return (
-        <div className="bg-[#de8f5a62] rounded-xl p-6">
+        <div className="bg-[#444444] rounded-xl p-6">
             <div className="flex items-center justify-between">
                 <p className="font-medium shrink-0">{label}</p>
                 <div className="space-y-2">
