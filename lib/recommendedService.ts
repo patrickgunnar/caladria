@@ -42,7 +42,11 @@ export const getRecommended = async () => {
             ],
         },
         include: {
-            stream: true,
+            stream: {
+                select: {
+                    isLive: true,
+                },
+            },
         },
         orderBy: {
             createdAt: "desc",
