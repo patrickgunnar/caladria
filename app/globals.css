@@ -10,6 +10,15 @@ body,
     color: #e8e8e8;
 }
 
+.hidden_scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hidden_scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 /*#707070 #808080
 #FFA500
 #999999 #A9A9A9
