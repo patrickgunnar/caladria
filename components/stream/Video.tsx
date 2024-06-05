@@ -34,6 +34,6 @@ export default function Video({ hostName, hostIdentity }: VideoProps) {
     }
 
     return (
-        <div className="relative group border-b aspect-video">{content}</div>
+        <div className="relative group border-b border-[#393939] aspect-video">{content}</div>
     );
 }
