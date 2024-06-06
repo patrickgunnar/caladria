@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useChatSidebar } from "@/store/useChatSidebar";
 import Video from "./Video";
 import Chat from "./Chat";
+import ChatToggle from "./ChatToggle";
 
 interface StreamPlayerProps {
     user: User;
@@ -39,6 +40,11 @@ export default function StreamPlayer({
                 <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-2 xl:col-span-2 2xl:col-span-5">
                     <Video hostName={username} hostIdentity={id} />
                 </div>
+                {collapsed && (
+                    <div className="hidden fixed top-20 right-8 z-50 lg:block">
+                        <ChatToggle />
+                    </div>
+                )}
                 <div className={cn("col-span-1", collapsed && "hidden")}>
                     <Chat
                         viewerName={name}
