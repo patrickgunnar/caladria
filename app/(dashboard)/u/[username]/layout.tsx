@@ -24,7 +24,7 @@ export default async function CreatorLayout({
     return (
         <>
             <Navbar />
-            <div className="flex pt-0 h-full">
+            <div className="flex pt-16 h-full">
                 <Suspense fallback={<LocalSidebarSkeleton />}>
                     <Sidebar />
                 </Suspense>
