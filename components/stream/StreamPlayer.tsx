@@ -33,7 +33,7 @@ export default function StreamPlayer({
                 token={token}
                 serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_WS_URL}
                 className={cn(
-                    "grid grid-cols-1 pt-16 h-full lg:grid-cols-3 lg:gap-y-0 xl:grid-cols-3 2xl:grid-cols-6",
+                    "grid grid-cols-1 pt-0 h-full lg:grid-cols-3 lg:gap-y-0 xl:grid-cols-3 2xl:grid-cols-6",
                     collapsed && "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
                 )}
             >

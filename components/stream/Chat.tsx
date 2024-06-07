@@ -11,6 +11,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import ChatHeader from "./ChatHeader";
 import ChatForm from "./ChatForm";
+import ChatList from "./ChatList";
 
 interface ChatProps {
     viewerName: string;
@@ -65,10 +66,11 @@ export default function Chat({
     };
 
     return (
-        <div className="flex flex-col bg-[#333333] border-0 border-b border-[#393939] pt-0 h-[calc(100vh-64px)]">
+        <div className="flex flex-col bg-[#333333] border border-b border-[#393939] pt-0 h-[calc(100vh-64px)]">
             <ChatHeader />
             {variant === ChatVariant.CHAT && (
                 <>
+                    <ChatList messages={reversedMessages} isHidden={isHidden} />
                     <ChatForm
                         value={value}
                         isHidden={isHidden}
