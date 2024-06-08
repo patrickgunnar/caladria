@@ -90,7 +90,6 @@ export function ChatFormSkeleton() {
         <div className="flex gap-y-4 flex-col items-center p-3">
             <Skeleton className="h-10 w-full" />
             <div className="flex gap-x-2 items-center ml-auto">
-                <Skeleton className="h-7 w-7" />
                 <Skeleton className="h-7 w-12" />
             </div>
         </div>

@@ -5,8 +5,8 @@ import { Stream, User } from "@prisma/client";
 import { LiveKitRoom } from "@livekit/components-react";
 import { cn } from "@/lib/utils";
 import { useChatSidebar } from "@/store/useChatSidebar";
-import Video from "./Video";
-import Chat from "./Chat";
+import Video, { VideoSkeleton } from "./Video";
+import Chat, { ChatSkeleton } from "./Chat";
 import ChatToggle from "./ChatToggle";
 
 interface StreamPlayerProps {
@@ -24,7 +24,7 @@ export default function StreamPlayer({
     const { collapsed } = useChatSidebar((state) => state);
 
     if (!token || !name || !identity) {
-        return <div>Cannot access the streaming</div>;
+        return <StreamPlayerSkeleton />;
     }
 
     return (
@@ -58,5 +58,19 @@ export default function StreamPlayer({
                 </div>
             </LiveKitRoom>
         </>
+    );
+}
+
+export function StreamPlayerSkeleton() {
+    return (
+        <div className="grid grid-cols-1 h-full lg:grid-cols-3 lg:gap-y-0 xl:grid-cols-3 2xl:grid-cols-6">
+            <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-2 xl:col-span-2 2xl:col-span-5">
+                <VideoSkeleton />
+                {/** TODO: HeaderSkeleton */}
+            </div>
+            <div className="col-span-1 bg-[#333333]">
+                <ChatSkeleton />
+            </div>
+        </div>
     );
 }

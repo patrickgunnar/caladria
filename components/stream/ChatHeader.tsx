@@ -25,6 +25,7 @@ export function ChatHeaderSkeleton() {
         <div className="hidden relative border-b border-[#393939] p-3 md:block">
             <Skeleton className="absolute left-3 top-3 h-6 w-6" />
             <Skeleton className="mx-auto h-6 w-28" />
+            <Skeleton className="absolute right-3 top-3 h-6 w-6" />
         </div>
     );
 }
