@@ -8,6 +8,7 @@ import { useChatSidebar } from "@/store/useChatSidebar";
 import Video, { VideoSkeleton } from "./Video";
 import Chat, { ChatSkeleton } from "./Chat";
 import ChatToggle from "./ChatToggle";
+import Header, { HeaderSkeleton } from "./Header";
 
 interface StreamPlayerProps {
     user: User;
@@ -16,7 +17,7 @@ interface StreamPlayerProps {
 }
 
 export default function StreamPlayer({
-    user: { id, username },
+    user: { id, username, imageUrl },
     stream,
     isFollowing,
 }: StreamPlayerProps) {
@@ -39,6 +40,14 @@ export default function StreamPlayer({
             >
                 <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-2 xl:col-span-2 2xl:col-span-5">
                     <Video hostName={username} hostIdentity={id} />
+                    <Header
+                        hostName={username}
+                        hostIdentity={id}
+                        viewerIdentity={identity}
+                        imageUrl={imageUrl}
+                        isFollowing={isFollowing}
+                        name={stream.name}
+                    />
                 </div>
                 {collapsed && (
                     <div className="hidden fixed top-20 right-8 z-50 lg:block">
@@ -66,7 +75,7 @@ export function StreamPlayerSkeleton() {
         <div className="grid grid-cols-1 h-full lg:grid-cols-3 lg:gap-y-0 xl:grid-cols-3 2xl:grid-cols-6">
             <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-2 xl:col-span-2 2xl:col-span-5">
                 <VideoSkeleton />
-                {/** TODO: HeaderSkeleton */}
+                <HeaderSkeleton />
             </div>
             <div className="col-span-1 bg-[#333333]">
                 <ChatSkeleton />
