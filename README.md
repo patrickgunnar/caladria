@@ -12,6 +12,8 @@ This is a live stream application built using a range of modern technologies. It
 - [Database Configuration](#database-configuration)
 - [Install Dependencies](#install-dependencies)
 - [Run Caladria](#run-caladria)
+- [Setting Up OBS (or Similar Software) with Caladria](#setting-up-OBS-(or-similar-software)-with-caladria)
+- [License and Ownership](#license-and-ownership)
 
 ## Features
 
@@ -155,3 +157,8 @@ Open [http://localhost:3000](http://localhost:3000) or Ngrok URL with your brows
     - Enter the provided server URL and stream key into the respective fields within OBS's settings.
 
 **By following these steps, you'll be able to successfully set up OBS (or similar software) with Caladria for seamless streaming.**
+
+## License and Ownership
+
+All rights and intellectual property over Caladria are exclusively owned by Patrick Gunnar.
+
