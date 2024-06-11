@@ -7,6 +7,7 @@ This is a live stream application built using a range of modern technologies. It
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
+- [Ngrok Configuration](#ngrok-configuration)
 - [Environment Variables](#environment-variables)
 - [Database Configuration](#database-configuration)
 - [Install Dependencies](#install-dependencies)
@@ -38,6 +39,27 @@ To set up and run this project locally, follow these steps:
    ```sh
    git clone https://github.com/patrickgunnar/caladria.git
    cd caladria
+
+## Ngrok Configuration
+To run this application on your local machine, you will need ngrok to expose your local server to the internet. Follow these steps to set up ngrok:
+
+1. Download and install ngrok:
+- Download ngrok from ngrok.com and follow the installation instructions.
+
+2. Start ngrok:
+- Run the following command to start ngrok and expose your local server:
+
+```sh
+    ngrok http 3000
+```
+
+3. Obtain the ngrok URL:
+- Copy the generated ngrok URL (e.g., https://<your-ngrok-id>.ngrok.io).
+
+###Set up webhooks:
+
+- Clerk: Go to your Clerk dashboard and set the webhook URL to https://<your-ngrok-id>.ngrok.io/api/webhooks/clerk.
+- Livekit: Go to your Livekit dashboard and set the webhook URL to https://<your-ngrok-id>.ngrok.io/api/webhooks/livekit.
 
 ## Environment Variables
 
@@ -111,4 +133,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) or Ngrok URL with your browser to see the result.
