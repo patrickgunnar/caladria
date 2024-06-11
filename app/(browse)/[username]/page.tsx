@@ -1,8 +1,9 @@
 import { isFollowingUser } from "@/lib/followService";
 import { getUserByUsername } from "@/lib/userService";
 import { notFound } from "next/navigation";
-import Actions from "./_components/actions";
 import { isBlockedByUser } from "@/lib/blockService";
+import OtherUserViewer from "./_components/OtherUserViewer";
+import StreamPlayer from "@/components/stream/StreamPlayer";
 
 interface PageProps {
     params: {
@@ -19,7 +20,7 @@ export default async function Page({
         notFound();
     }
 
-    const { id, username } = user;
+    const { id, username, stream, _count, bio, imageUrl } = user;
     const isFollowing = await isFollowingUser(id);
     const isBlocked = await isBlockedByUser(id);
 
@@ -28,11 +29,24 @@ export default async function Page({
     }
 
     return (
-        <div className="flex gap-y-4 flex-col">
-            <p>Username: {username}</p>
-            <p>User ID: {id}</p>
-            <p>Following: {JSON.stringify(isFollowing)}</p>
-            <Actions isFollowing={isFollowing} userId={id} />
+        <div className="h-full">
+            {stream ? (
+                <StreamPlayer
+                    user={user}
+                    stream={stream}
+                    isFollowing={isFollowing}
+                    followedByCount={_count.followedBy}
+                />
+            ) : (
+                <OtherUserViewer
+                    id={id}
+                    bio={bio}
+                    username={username}
+                    imageUrl={imageUrl}
+                    isLive={false}
+                    followedByCount={_count.followedBy}
+                />
+            )}
         </div>
     );
 }
