@@ -11,7 +11,7 @@ This is a live stream application built using a range of modern technologies. It
 - [Environment Variables](#environment-variables)
 - [Database Configuration](#database-configuration)
 - [Install Dependencies](#install-dependencies)
-- [Getting Started](#getting-started)
+- [Run Caladria](#run-caladria)
 
 ## Features
 
@@ -120,9 +120,9 @@ npx prisma db push
 npm install
 ```
 
-## Getting Started
+## Run Caladria
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
