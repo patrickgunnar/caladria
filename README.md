@@ -73,7 +73,8 @@ Fill in the required keys and secrets in the .env file or rename .env_example to
 - **Uploadthing**: Used to store user thumbnails. Sign up at Uploadthing and obtain the secret and app ID.
 - **Clerk**: Handles authentication and user management. Sign up at Clerk and obtain the publishable key, secret key, and webhook secret.
 
-Ensure these values are correctly set in your .env file.
+
+### Ensure these values are correctly set in your .env file.
 
 - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
 - CLERK_SECRET_KEY=""
