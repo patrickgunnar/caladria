@@ -10,17 +10,20 @@ import Chat, { ChatSkeleton } from "./Chat";
 import ChatToggle from "./ChatToggle";
 import Header, { HeaderSkeleton } from "./Header";
 import InfoCard from "./InfoCard";
+import AboutCard from "./AboutCard";
 
 interface StreamPlayerProps {
     user: User;
     stream: Stream;
     isFollowing: boolean;
+    followedByCount: number;
 }
 
 export default function StreamPlayer({
-    user: { id, username, imageUrl },
+    user: { id, username, imageUrl, bio },
     stream,
     isFollowing,
+    followedByCount
 }: StreamPlayerProps) {
     const { token, name, identity } = useViewerToken(id);
     const { collapsed } = useChatSidebar((state) => state);
@@ -54,6 +57,13 @@ export default function StreamPlayer({
                         viewerIdentity={identity}
                         name={stream.name}
                         thumbnail={stream.thumbnailUrl}
+                    />
+                    <AboutCard
+                        hostName={username}
+                        hostIdentity={id}
+                        viewerIdentity={identity}
+                        bio={bio}
+                        followedByCount={followedByCount}
                     />
                 </div>
                 {collapsed && (
