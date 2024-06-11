@@ -44,22 +44,22 @@ To set up and run this project locally, follow these steps:
 To run this application on your local machine, you will need ngrok to expose your local server to the internet. Follow these steps to set up ngrok:
 
 1. Download and install ngrok:
-- Download ngrok from ngrok.com and follow the installation instructions.
+    - Download ngrok from ngrok.com and follow the installation instructions.
 
 2. Start ngrok:
-- Run the following command to start ngrok and expose your local server:
+    - Run the following command to start ngrok and expose your local server:
 
 ```sh
     ngrok http 3000
 ```
 
 3. Obtain the ngrok URL:
-- Copy the generated ngrok URL (e.g., https://<your-ngrok-id>.ngrok.io).
+    - Copy the generated ngrok URL (e.g., https://"your-ngrok-id".ngrok.io).
 
-###Set up webhooks:
+### Set up webhooks:
 
-- Clerk: Go to your Clerk dashboard and set the webhook URL to https://<your-ngrok-id>.ngrok.io/api/webhooks/clerk.
-- Livekit: Go to your Livekit dashboard and set the webhook URL to https://<your-ngrok-id>.ngrok.io/api/webhooks/livekit.
+- Clerk: Go to your Clerk dashboard and set the webhook URL to https://"your-ngrok-id".ngrok.io/api/webhooks/clerk.
+- Livekit: Go to your Livekit dashboard and set the webhook URL to https://"your-ngrok-id".ngrok.io/api/webhooks/livekit.
 
 ## Environment Variables
 
