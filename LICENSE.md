@@ -4,7 +4,7 @@
 
 **Product:** Caladria
 
-**Effective Date:** June, 11 of 20224
+**Effective Date:** June, 11 of 2024
 
 ## 1. Ownership and Rights
 Patrick Gunnar, hereinafter referred to as "Owner," retains exclusive ownership and all intellectual property rights over the software product known as "Caladria." This includes, but is not limited to, all source code, documentation, design, and associated materials.
@@ -37,4 +37,4 @@ By using Caladria, the end user acknowledges that they have read, understood, an
 **Signature:**
 
 Patrick Gunnar  
-Date: June, 11 of 20224
+Date: June, 11 of 2024
