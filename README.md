@@ -67,7 +67,7 @@ Fill in the required keys and secrets in the .env file or rename .env_example to
 
 ### Obtaining Keys and Secrets
 
-#### To run this application, you must have accounts on the following platforms and obtain the necessary keys and secrets:
+To run this application, you must have accounts on the following platforms and obtain the necessary keys and secrets:
 
 - **Livekit**: Required for live streaming capabilities. Sign up at Livekit and obtain the API URL, API key, API secret, and WebSocket URL.
 - **Uploadthing**: Used to store user thumbnails. Sign up at Uploadthing and obtain the secret and app ID.
