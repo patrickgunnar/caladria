@@ -7,7 +7,7 @@
 **Effective Date:** June, 11 of 2024
 
 ## 1. Ownership and Rights
-Patrick Gunnar, hereinafter referred to as "Owner," retains exclusive ownership and all intellectual property rights over the software product known as "Caladria." This includes, but is not limited to, all source code, documentation, design, and associated materials.
+Patrick Gunnar, hereinafter referred to as "Owner", retains exclusive ownership and all intellectual property rights over the software product known as "Caladria". This includes, but is not limited to, all source code, documentation, design, and associated materials.
 
 ## 2. Grant of License
 Subject to the terms and conditions of this agreement, the Owner grants a limited, non-exclusive, non-transferable license to the end user to use Caladria solely for its intended purpose. This license does not convey any ownership rights in Caladria to the end user.
@@ -25,7 +25,7 @@ This license is effective until terminated. The Owner may terminate this license
 Caladria is provided "as is" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the Owner be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with Caladria.
 
 ## 6. Governing Law
-This license agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law principles.
+This license agreement shall be governed by and construed in accordance with the laws of Brazil, without regard to its conflict of law principles.
 
 ## 7. Entire Agreement
 This agreement constitutes the entire understanding between the parties regarding the use of Caladria and supersedes all prior agreements, negotiations, and discussions between the parties relating to it.
