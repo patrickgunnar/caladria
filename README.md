@@ -135,3 +135,23 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) or Ngrok URL with your browser to see the result.
+
+## Setting Up OBS (or Similar Software) with Caladria
+
+1. Access the Dashboard:
+    - Log in to your Caladria account and navigate to the dashboard.
+
+2. Generate Connection Keys:
+    - Go to the Keys section.
+    - Select the option to generate a new connection.
+    - You will have the choice between RTMP and WHIP protocols.
+
+3. Retrieve Server URL and Stream Key:
+    - After generating the connection keys, the server URL and stream key will be displayed.
+    - Note these details as they are essential for the setup process.
+
+4. Configure OBS:
+    - Open OBS (or your chosen streaming software).
+    - Enter the provided server URL and stream key into the respective fields within OBS's settings.
+
+**By following these steps, you'll be able to successfully set up OBS (or similar software) with Caladria for seamless streaming.**
