@@ -38,11 +38,11 @@ export default function StreamPlayer({
                 token={token}
                 serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_WS_URL}
                 className={cn(
-                    "grid grid-cols-1 pt-0 h-full lg:grid-cols-3 lg:gap-y-0 xl:grid-cols-3 2xl:grid-cols-6",
+                    "grid grid-cols-1 pt-0 h-full lg:grid-cols-5 lg:gap-y-0 xl:grid-cols-6 2xl:grid-cols-7",
                     collapsed && "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
                 )}
             >
-                <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-2 xl:col-span-2 2xl:col-span-5">
+                <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-3 xl:col-span-4 2xl:col-span-5">
                     <Video hostName={username} hostIdentity={id} />
                     <Header
                         hostName={username}
@@ -71,7 +71,7 @@ export default function StreamPlayer({
                         <ChatToggle />
                     </div>
                 )}
-                <div className={cn("col-span-1", collapsed && "hidden")}>
+                <div className={cn("col-span-2", collapsed && "hidden")}>
                     <Chat
                         viewerName={name}
                         hostName={username}
@@ -89,12 +89,12 @@ export default function StreamPlayer({
 
 export function StreamPlayerSkeleton() {
     return (
-        <div className="grid grid-cols-1 h-full lg:grid-cols-3 lg:gap-y-0 xl:grid-cols-3 2xl:grid-cols-6">
-            <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-2 xl:col-span-2 2xl:col-span-5">
+        <div className="grid grid-cols-1 h-full lg:grid-cols-5 lg:gap-y-0 xl:grid-cols-6 2xl:grid-cols-7">
+            <div className="hidden-scrollbar col-span-1 pb-10 space-y-4 lg:overflow-y-auto lg:col-span-3 xl:col-span-4 2xl:col-span-5">
                 <VideoSkeleton />
                 <HeaderSkeleton />
             </div>
-            <div className="col-span-1 bg-[#333333]">
+            <div className="col-span-2 bg-[#333333]">
                 <ChatSkeleton />
             </div>
         </div>

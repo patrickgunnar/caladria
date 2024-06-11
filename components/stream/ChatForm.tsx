@@ -67,7 +67,7 @@ export default function ChatForm({
                     placeholder="Send a message"
                     className={cn(
                         "border-white/10 bg-[#333333] text-inherit",
-                        isFollowersOnly && "rounded-t-none border-t-0"
+                        (isFollowersOnly || isDelayed) && "rounded-t-none border-t-0"
                     )}
                 />
             </div>
