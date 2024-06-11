@@ -8,8 +8,8 @@ This is a live stream application built using a range of modern technologies. It
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
 - [Environment Variables](#environment-variables)
-- [Install Dependencies](#install-dependencies)
 - [Database Configuration](#database-configuration)
+- [Install Dependencies](#install-dependencies)
 - [Getting Started](#getting-started)
 
 ## Features
@@ -41,7 +41,7 @@ To set up and run this project locally, follow these steps:
 
 ## Environment Variables
 
-**Fill in the required keys and secrets in the .env file or rename .env_example to .env.**
+Fill in the required keys and secrets in the .env file or rename .env_example to .env.
 
 ### Obtaining Keys and Secrets
 
@@ -51,31 +51,26 @@ To set up and run this project locally, follow these steps:
 - Uploadthing: Used to store user thumbnails. Sign up at Uploadthing and obtain the secret and app ID.
 - Clerk: Handles authentication and user management. Sign up at Clerk and obtain the publishable key, secret key, and webhook secret.
 
-**Ensure these values are correctly set in your .env file.**
+Ensure these values are correctly set in your .env file.
 
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
-CLERK_SECRET_KEY=""
-CLERK_WEBHOOK_SECRET=""
+- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
+- CLERK_SECRET_KEY=""
+- CLERK_WEBHOOK_SECRET=""
 
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+- NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+- NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+- NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+- NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
+- DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
 
-LIVEKIT_API_URL=""
-LIVEKIT_API_KEY=""
-LIVEKIT_API_SECRET=""
-NEXT_PUBLIC_LIVEKIT_WS_URL=""
+- LIVEKIT_API_URL=""
+- LIVEKIT_API_KEY=""
+- LIVEKIT_API_SECRET=""
+- NEXT_PUBLIC_LIVEKIT_WS_URL=""
 
-UPLOADTHING_SECRET=""
-UPLOADTHING_APP_ID=""
-
-## Install dependencies
-```bash
-npm install
-```
+- UPLOADTHING_SECRET=""
+- UPLOADTHING_APP_ID=""
 
 ## Setup the database
 
@@ -89,12 +84,18 @@ npx prisma migrate dev
 npx prisma db push
 ```
 
+
 **By default, this application uses MySQL as the database. You can change the database provider by updating the schema.prisma file in the prisma directory. Here’s how you can do it:**
 
 1. Open prisma/schema.prisma.
 2. Modify the provider field in the client block to your preferred database (e.g., postgresql, sqlite, etc.).
 3. Update the DATABASE_URL in your .env file to match the new database connection string.
 4. Run the Prisma migrations and db push to update the database schema
+
+## Install dependencies
+```bash
+npm install
+```
 
 ## Getting Started
 
