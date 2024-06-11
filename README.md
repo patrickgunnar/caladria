@@ -58,8 +58,8 @@ To run this application on your local machine, you will need ngrok to expose you
 
 ### Set up webhooks:
 
-- Clerk: Go to your Clerk dashboard and set the webhook URL to https://"your-ngrok-id".ngrok.io/api/webhooks/clerk.
-- Livekit: Go to your Livekit dashboard and set the webhook URL to https://"your-ngrok-id".ngrok.io/api/webhooks/livekit.
+- **Clerk**: Go to your Clerk dashboard and set the webhook URL to https://"your-ngrok-id".ngrok.io/api/webhooks/clerk.
+- **Livekit**: Go to your Livekit dashboard and set the webhook URL to https://"your-ngrok-id".ngrok.io/api/webhooks/livekit.
 
 ## Environment Variables
 
@@ -69,9 +69,9 @@ Fill in the required keys and secrets in the .env file or rename .env_example to
 
 #### To run this application, you must have accounts on the following platforms and obtain the necessary keys and secrets:
 
-- Livekit: Required for live streaming capabilities. Sign up at Livekit and obtain the API URL, API key, API secret, and WebSocket URL.
-- Uploadthing: Used to store user thumbnails. Sign up at Uploadthing and obtain the secret and app ID.
-- Clerk: Handles authentication and user management. Sign up at Clerk and obtain the publishable key, secret key, and webhook secret.
+- **Livekit**: Required for live streaming capabilities. Sign up at Livekit and obtain the API URL, API key, API secret, and WebSocket URL.
+- **Uploadthing**: Used to store user thumbnails. Sign up at Uploadthing and obtain the secret and app ID.
+- **Clerk**: Handles authentication and user management. Sign up at Clerk and obtain the publishable key, secret key, and webhook secret.
 
 Ensure these values are correctly set in your .env file.
 
