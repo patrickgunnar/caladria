@@ -17,11 +17,16 @@ export default async function CreatorPage({
         redirect("/");
     }
 
-    const { stream, ...validUser } = user;
+    const { stream, _count, ...validUser } = user;
 
     return (
         <div className="h-full">
-            <StreamPlayer user={validUser} stream={stream} isFollowing />
+            <StreamPlayer
+                user={validUser}
+                stream={stream}
+                followedByCount={_count.followedBy}
+                isFollowing
+            />
         </div>
     );
 }
