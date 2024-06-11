@@ -12,7 +12,7 @@ export default function BrowseLayout({
     return (
         <>
             <Navbar />
-            <div className="flex pt-20 h-full">
+            <div className="flex pt-16 h-full">
                 <Suspense fallback={<LocalSidebarSkeleton />}>
                     <Sidebar />
                 </Suspense>
