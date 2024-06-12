@@ -150,3 +150,28 @@ export async function unblockUser(id: string) {
         return null;
     }
 }
+
+export async function getBlockedUsers() {
+    try {
+        const self = await getSelf();
+
+        if (!self) {
+            throw new Error("You must be logged in to proceed");
+        }
+
+        const blockedUsers = await db.block.findMany({
+            where: {
+                blockerId: self.id,
+            },
+            include: {
+                blocked: true,
+            },
+        });
+
+        return blockedUsers;
+    } catch (error: any) {
+        console.log(error);
+
+        return null;
+    }
+}
