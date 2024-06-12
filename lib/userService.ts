@@ -1,10 +1,45 @@
 import { db } from "./db";
 
+export type PartialStreamType = {
+    id: string;
+    name: string;
+    isLive: boolean;
+    thumbnailUrl: string | null;
+    isChatDelayed: boolean;
+    isChatEnabled: boolean;
+    isChatFollowersOnly: boolean;
+};
+
+export type PartialUserType = {
+    id: string;
+    bio: string | null;
+    username: string;
+    imageUrl: string | null;
+    externalUserId: string;
+    stream: PartialStreamType | null;
+    _count: { followedBy: number };
+};
+
 export const getUserByUsername = async (username: string) => {
     const user = await db.user.findUnique({
         where: { username },
-        include: {
-            stream: true,
+        select: {
+            id: true,
+            bio: true,
+            username: true,
+            imageUrl: true,
+            externalUserId: true,
+            stream: {
+                select: {
+                    id: true,
+                    name: true,
+                    isLive: true,
+                    thumbnailUrl: true,
+                    isChatDelayed: true,
+                    isChatEnabled: true,
+                    isChatFollowersOnly: true,
+                },
+            },
             _count: {
                 select: {
                     followedBy: true,

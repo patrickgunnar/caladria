@@ -1,7 +1,6 @@
 "use client";
 
 import { useViewerToken } from "@/hooks/useViewerToken";
-import { Stream, User } from "@prisma/client";
 import { LiveKitRoom } from "@livekit/components-react";
 import { cn } from "@/lib/utils";
 import { useChatSidebar } from "@/store/useChatSidebar";
@@ -11,10 +10,11 @@ import ChatToggle from "./ChatToggle";
 import Header, { HeaderSkeleton } from "./Header";
 import InfoCard from "./InfoCard";
 import AboutCard from "./AboutCard";
+import { PartialStreamType, PartialUserType } from "@/lib/userService";
 
 interface StreamPlayerProps {
-    user: User;
-    stream: Stream;
+    user: PartialUserType;
+    stream: PartialStreamType;
     isFollowing: boolean;
     followedByCount: number;
 }
@@ -48,7 +48,7 @@ export default function StreamPlayer({
                         hostName={username}
                         hostIdentity={id}
                         viewerIdentity={identity}
-                        imageUrl={imageUrl}
+                        imageUrl={imageUrl ?? ""}
                         isFollowing={isFollowing}
                         name={stream.name}
                     />
