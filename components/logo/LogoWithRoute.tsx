@@ -27,7 +27,7 @@ export function LogoWithRoute({ label }: LogoWithRouteProps) {
                         Caladria
                     </p>
                     {label && (
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs text-inherit">
                             {label}
                         </p>
                     )}

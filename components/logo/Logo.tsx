@@ -13,7 +13,7 @@ export function Logo() {
             <GiElfEar size={60} className="text-[#FF7F00] drop-shadow-sm" />
             <div
                 className={cn(
-                    "flex flex-col items-start text-black pr-5",
+                    "flex flex-col items-start text-inherit pr-5",
                     fontFamily.className
                 )}
             >
