@@ -51,13 +51,19 @@ export async function onBlock(id: string) {
 
 export async function onUnblock(id: string) {
     try {
+        const self = await getSelf();
+
+        if (!self) {
+            throw new Error("Unauthorized");
+        }
+
         const unblockedUser = await unblockUser(id);
 
         // refresh cache
         revalidatePath("/");
 
         if (unblockedUser) {
-            revalidatePath(`/${unblockedUser.blocked.username}`);
+            revalidatePath(`/u/${self.username}`);
         }
 
         return unblockedUser;
