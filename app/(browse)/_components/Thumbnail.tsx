@@ -45,7 +45,7 @@ export default function Thumbnail({
         <div className="group relative aspect-video rounded-md cursor-pointer">
             <div className="absolute flex items-center justify-center bg-[#FF7F00] rounded-md inset-0 opacity-0 transition-opacity group-hover:opacity-100" />
             {content}
-            {isLive && (
+            {isLive && src && (
                 <div className="absolute flex items-center justify-center bg-[#2C2C2C80] transition-transform h-full w-full group-hover:translate-x-2 group-hover:translate-y-2">
                     <LiveBadge className="text-sm" />
                 </div>
