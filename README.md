@@ -138,7 +138,7 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        hostname: 'your-domain.com',
+        hostname: 'uploadthing domain',
       },
     ],
   },
