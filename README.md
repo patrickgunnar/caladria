@@ -13,7 +13,7 @@ This is a live stream application built using a range of modern technologies. It
 -   [Updating Next Configuration for Remote Image Patterns](#updating-next-configuration-for-remote-image-patterns)
 -   [Install Dependencies](#install-dependencies)
 -   [Run Caladria](#run-caladria)
--   [Setting Up OBS (or Similar Software) with Caladria](<#setting-up-OBS-(or-similar-software)-with-caladria>)
+-   [Setting Up OBS (or Similar Software) with Caladria](#setting-up-OBS-or-similar-software-with-caladria)
 -   [License and Ownership](#license-and-ownership)
 
 ## Features
